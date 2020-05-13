@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c9df1e88-595e-440b-beb5-a9bbd763830d",
+		"name": "Contentstack - CVS Import",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create an entry",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9fa7f410-de4c-442e-8806-070f03d284db",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "{{APIKEY}}",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "{{AUTHORIZATION}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entry\": {\n    \"title\": \"{{title}}\",\n\t\"state_name\": \"{{state_name}}\",\n\t\"county_name\": \"{{county_name}}\",\n\t\"lat\": {{lat}},\n\t\"lng\": {{lng}},\n\t\"population\": {{population}},\n\t\"density\": {{density}},\n\t\"timezone\": \"{{timezone}}\"\n  }\n}"
+				},
+				"url": {
+					"raw": "https://{{HOST}}/v3/content_types/us_cities/entries?locale=en-us",
+					"protocol": "https",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"v3",
+						"content_types",
+						"us_cities",
+						"entries"
+					],
+					"query": [
+						{
+							"key": "locale",
+							"value": "en-us"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

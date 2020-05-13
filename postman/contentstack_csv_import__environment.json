@@ -1,0 +1,24 @@
+{
+	"id": "d1a3caa1-521b-4817-9d48-bdee1e000dda",
+	"name": "Contentstack - CVS Import",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "api.contentstack.io",
+			"enabled": true
+		},
+		{
+			"key": "APIKEY",
+			"value": "<your stack api key>",
+			"enabled": true
+		},
+		{
+			"key": "AUTHORIZATION",
+			"value": "<your management token>",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-05-13T14:34:52.744Z",
+	"_postman_exported_using": "Postman/7.23.0"
+}
