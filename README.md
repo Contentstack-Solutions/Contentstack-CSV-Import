@@ -45,3 +45,6 @@ Download and install [Postman](https://www.postman.com/) on your computer.
     * _(Optional)_ Add `--delay-request 100` to the command to avoid rate limiting by Contentstack.
     * _(Optional)_ Add `-n 10` to the end of the command if you want to limit Newman to create only 10 entries.
 4. See the City Entries appear in Contentstack.
+
+## Python Example
+_Work in progress_
