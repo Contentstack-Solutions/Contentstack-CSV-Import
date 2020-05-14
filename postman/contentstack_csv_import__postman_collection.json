@@ -17,6 +17,18 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "38690033-1590-4713-8217-132f8008245b",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"pm.environment.set(\"entry_uid\", data.entry.uid);",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
@@ -59,6 +71,61 @@
 							"key": "locale",
 							"value": "en-us"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish an entry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9071405d-eb53-4213-8527-9212efafac6f",
+						"exec": [
+							"var data = JSON.parse(responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "{{APIKEY}}",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "{{AUTHORIZATION}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"entry\": {\n\t\t\"environments\": [\"development\"],\n\t\t\"locales\": [\"en-us\"]\n\t}\n}"
+				},
+				"url": {
+					"raw": "https://{{HOST}}/v3/content_types/us_cities/entries/{{entry_uid}}/publish",
+					"protocol": "https",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"v3",
+						"content_types",
+						"us_cities",
+						"entries",
+						"{{entry_uid}}",
+						"publish"
 					]
 				}
 			},

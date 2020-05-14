@@ -2,17 +2,18 @@
 Import CSV files as entries to Contentstack.
 Two examples, both using the Content Management API provided by Contentstack:
 * A Postman Collection and Environment that can be used with Postman Runner or Newman
-  * Only import and save (Not publish)
+  * Creates an entry and publishes it to an environment
 * Python scripts
-  * Both import and publish
+  * Creates an entry and publishes it. Also offers bulk publish.
 
 Entries created in this example are all the cities in Los Angeles county, USA.
 
 ##  Before we start
 1. Create a stack in Contentstack or use an existing stack, suitable for testing.
-2. Create a new content type, using the `Import` button in the Contentstack UI.
-3. Create a Management Token in Contentstack Settings and safe it in a safe place.
+2. Create a new content type, using the `Import` button in the Contentstack UI. Choose the `contenttype_definition_us_cities.json` file from this repo. Then confirm the content type has been created successfully.
+3. Create a Management Token with Write Permissions under Settings and store it in a safe place.
 4. The example assumes you're using the `en-us` locale in your stack. Make sure that is the case or change the code in this repo where needed.
+5. For publishing, create an environment in Contentstack. In this example the environment is called `development`.
 
 ## Postman Example
 
@@ -34,6 +35,7 @@ Download and install [Postman](https://www.postman.com/) on your computer.
   * _(Optional)_ To lower the risk of being rate limited by Contentstack, it could be a good idea to input `100` in the `Delay` field (Especially if you are not limiting the iterations).
   * Select the `uccities.csv` file in `Data`.
   * _(Optional)_  We recommend checking in the `Save Responses`, to get a better understanding of errors, if/when they arise.
+  * Notice it is possible to uncheck the publishing request, if you only want to create the entry.
   * Click `Run` and see the the City Entries appear in Contentstack.
 
 ### Using Newman, the command-line tool
@@ -44,7 +46,7 @@ Download and install [Postman](https://www.postman.com/) on your computer.
       * `newman run contentstack_csv_import__postman_collection.json -e contentstack_csv_import__environment2.json -d ../uscities.csv`
       * _(Optional)_ Add `--delay-request 100` to the command to avoid rate limiting by Contentstack.
       * _(Optional)_ Add `-n 10` to the end of the command if you want to limit Newman to create only 10 entries.
-4. See the City Entries appear in Contentstack.
+4. See the City Entries appear and publish in Contentstack.
 
 ## Python Example
 _Work in progress_
