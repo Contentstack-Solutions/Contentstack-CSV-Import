@@ -49,4 +49,14 @@ Download and install [Postman](https://www.postman.com/) on your computer.
 4. See the City Entries appear and publish in Contentstack.
 
 ## Python Example
-_Work in progress_
+1. This script was developed using Python 3.7.6 and utilises e.g. the `requests` package, installed using pip.
+    * `pip install requests`
+2. Define following environmental variables on your computer:
+    * `CS_APIKEY` - The API key of your Contentstack stack.
+    * `CS_HOST` - Contentstack Region. Either api.contentstack.io (US) or eu-api.contentstack.com (EU)
+    * `CS_MANAGEMENTTOKEN` - Contentstack Management Token with write permissions.
+3. Move into the `python` directory and run the `start.py` file.
+    * `python start.py`
+4. The script asks you if you want to try to bulk publish the entries.
+    * Note that bulk publishing only works if it's included in your organisation's plan.
+5. Watch output logs of the script and see the City Entries appear in Contentstack.
