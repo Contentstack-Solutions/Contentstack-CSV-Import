@@ -43,7 +43,7 @@ Download and install [Postman](https://www.postman.com/) on your computer.
 2. Under the `Postman` directory in this repo, replace the `<your stack api key>`,`<your management token>` and `api.contentstack.io` if you are in the EU region, in the `contentstack_csv_import__postman_environment.json` file.
 3. In the Postman directory, run `newman` pointing to the `uscities.csv`, `contentstack_csv_import__postman_collection.json` and `contentstack_csv_import__postman_environment.json` files.
     * *Example:*
-      * `newman run contentstack_csv_import__postman_collection.json -e contentstack_csv_import__environment2.json -d ../uscities.csv`
+      * `newman run contentstack_csv_import__postman_collection.json -e contentstack_csv_import__environment.json -d ../uscities.csv`
       * _(Optional)_ Add `--delay-request 100` to the command to avoid rate limiting by Contentstack.
       * _(Optional)_ Add `-n 10` to the end of the command if you want to limit Newman to create only 10 entries.
 4. See the City Entries appear and publish in Contentstack.
