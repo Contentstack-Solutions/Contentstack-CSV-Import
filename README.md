@@ -1,6 +1,6 @@
 # Contentstack-CSV-Import
 
-**Not officially support by Contentstack**
+**Not officially supported by Contentstack**
 
 Import CSV files as entries to Contentstack.
 Two examples, both using the Content Management API provided by Contentstack:
