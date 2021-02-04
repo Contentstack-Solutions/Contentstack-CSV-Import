@@ -1,4 +1,7 @@
 # Contentstack-CSV-Import
+
+**Not officially support by Contentstack**
+
 Import CSV files as entries to Contentstack.
 Two examples, both using the Content Management API provided by Contentstack:
 * A Postman Collection and Environment that can be used with Postman Runner or Newman
